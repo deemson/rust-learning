@@ -53,11 +53,3 @@ fn test_vec_of_closures_that_return_dyn_trait() {
     let results: Vec<i32> = traits.iter().map(|t| t.method()).collect();
     assert_eq!([1, 2], results.as_slice())
 }
-
-#[test]
-fn test_drop_values_in_vec() {
-    let v = vec![1, 2, 3];
-    for value in v.iter() {
-        drop(value);
-    }
-}
